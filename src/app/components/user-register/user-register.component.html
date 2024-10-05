@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg bg-main">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><mat-icon style="color: white;">arrow_back</mat-icon></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                
+                <a class="nav-link" href="#">Login</a>
+                
+            </div>
+        </div>s
+    </div>
+</nav>
+<div class="container mt-4">
+
+    <form [formGroup]="formUser" (ngSubmit)="submitUser()">
+        <div class="row">
+            <h3>Defina seu perfil de usuário</h3>
+            <div class=" mt-2 mb-3" *ngFor="let opt of options; let i = index">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="tipo" id="radio-{{opt}}" [value]="opt">
+                    <label class="form-check-label" for='radio-{{opt}}'>
+                        {{opt}}
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <h3>Dados de acesso</h3>
+            <div class="input-group mb-3 mt-2">
+                <span class="input-group-text" id="basic-addon1"><mat-icon>person</mat-icon></span>
+                <input type="text" class="form-control" formControlName="usuario" placeholder="Nome de usuário"
+                    aria-label="Nome de usuário" aria-describedby="basic-addon1">
+            </div>
+    
+            <div class="input-group mb-3 mt-2">
+                <span class="input-group-text" id="basic-addon1"><mat-icon>email</mat-icon></span>
+                <input type="text" class="form-control" formControlName="email" placeholder="Seu Email"
+                    aria-label="Seu Email" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3 mt-2">
+                <span class="input-group-text" id="basic-addon1"><mat-icon>security</mat-icon></span>
+                <input type="text" class="form-control" formControlName="senha" placeholder="Sua Senha"
+                    aria-label="Sua Senha" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+        </div>
+
+        
+
+
+
+
+
+
+    </form>
+</div>
